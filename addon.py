@@ -20,7 +20,7 @@ STRINGS = {
     'no_email_set': 30003,
     'email_sent': 30004
 }
-BASE_URL = 'http://xbmclogs.com'
+BASE_URL = 'http://spmclogs.semperpax.com'
 UPLOAD_LINK = BASE_URL + '/%s'
 UPLOAD_URL = BASE_URL + '/api/json/create'
 EMAIL_URL = BASE_URL + '/xbmc-addon.php'
@@ -116,9 +116,9 @@ class LogUploader(object):
             raise Exception('No Email set!')
         post_dict = {'email': mail_address}
         for logfile in uploaded_logs:
-            if logfile['title'] == 'kodi.log':
+            if logfile['title'] == 'spmc.log':
                 post_dict['xbmclog_id'] = logfile['paste_id']
-            elif logfile['title'] == 'kodi.old.log':
+            elif logfile['title'] == 'spmc.old.log':
                 post_dict['oldlog_id'] = logfile['paste_id']
             elif logfile['title'] == 'crash.log':
                 post_dict['crashlog_id'] = logfile['paste_id']
@@ -146,9 +146,9 @@ class LogUploader(object):
         elif condition('system.platform.linux'):
             crashlog_path = os.path.expanduser('~')
             crashfile_match = 'xbmc_crashlog'
-        # get fullpath for kodi.log and kodi.old.log
-        log = os.path.join(log_path, 'kodi.log')
-        log_old = os.path.join(log_path, 'kodi.old.log')
+        # get fullpath for spmc.log and spmc.old.log
+        log = os.path.join(log_path, 'spmc.log')
+        log_old = os.path.join(log_path, 'spmc.old.log')
         # check for XBMC crashlogs
         log_crash = None
         if crashlog_path and os.path.isdir(crashlog_path) and crashfile_match:
@@ -163,12 +163,12 @@ class LogUploader(object):
         found_logs = []
         if os.path.isfile(log):
             found_logs.append({
-                'title': 'kodi.log',
+                'title': 'spmc.log',
                 'path': log
             })
         if not self.skip_oldlog and os.path.isfile(log_old):
             found_logs.append({
-                'title': 'kodi.old.log',
+                'title': 'spmc.old.log',
                 'path': log_old
             })
         if log_crash and os.path.isfile(log_crash):
