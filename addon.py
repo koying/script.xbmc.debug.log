@@ -72,9 +72,9 @@ class LogUploader(object):
         self.__log('starting upload "%s"...' % filepath)
         post_dict = {
             'data': file_content,
-            'project': 'spmclogs',
+            'project': 'www',
             'language': 'text',
-            'expire': 86400,
+            'expire': 1209600,
         }
         post_data = json.dumps(post_dict)
         headers = {
