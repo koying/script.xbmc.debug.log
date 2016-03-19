@@ -7,7 +7,7 @@
     <extension point="xbmc.addon.metadata">
         <language></language>
         <platform>all</platform>
-        <website>http://spmclogs.semperpax.com</website>
+        <website>http://xbmcLogs.com</website>
         <source>https://github.com/dersphere/script.xbmc.debug.log</source>
         <forum>http://forum.xbmc.org/showthread.php?tid=127108</forum>
         <email>sphere@dersphere.de</email>

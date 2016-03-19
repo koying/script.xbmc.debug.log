@@ -20,7 +20,7 @@ STRINGS = {
     'no_email_set': 30003,
     'email_sent': 30004
 }
-BASE_URL = 'http://spmclogs.semperpax.com'
+BASE_URL = 'http://xbmclogs.com'
 UPLOAD_LINK = BASE_URL + '/%s'
 UPLOAD_URL = BASE_URL + '/api/json/create'
 EMAIL_URL = BASE_URL + '/xbmc-addon.php'
